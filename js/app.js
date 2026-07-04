@@ -67,7 +67,6 @@ function renderHeader() {
     const btn = document.createElement("button");
     btn.className = "tab" + (c.key === activeTab ? " active" : "");
     btn.textContent = c.label;
-    if (c.key === activeTab) btn.style.background = c.color;
     btn.addEventListener("click", () => {
       activeTab = c.key;
       renderHeader();

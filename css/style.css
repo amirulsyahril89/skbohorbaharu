@@ -1,20 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap");
 
 :root {
-  --bg: #F7F8FB;
+  --bg: #F5F8FC;
   --surface: #FFFFFF;
-  --ink: #14171F;
-  --muted: #6B7280;
-  --border: #ECEEF2;
+  --ink: #1E293B;
+  --muted: #64748B;
+  --border: #E2E8F0;
+
+  --navy: #1E3A8A;
+  --blue: #2563EB;
+  --skyblue: #0284C7;
+  --gold: #D99A00;
+  --gold-bright: #F5B700;
 
   --umum: #2563EB;
-  --umum-tint: #EAF1FF;
-  --kurikulum: #7C3AED;
-  --kurikulum-tint: #F2ECFE;
-  --kokurikulum: #059669;
-  --kokurikulum-tint: #E6F7F1;
-  --hem: #EA580C;
-  --hem-tint: #FEF0E7;
+  --umum-tint: #E8F0FE;
+  --kurikulum: #1E3A8A;
+  --kurikulum-tint: #E7EBF7;
+  --kokurikulum: #0284C7;
+  --kokurikulum-tint: #E4F3FB;
+  --hem: #B8860B;
+  --hem-tint: #FBF1DA;
 }
 
 * { box-sizing: border-box; }
@@ -35,7 +41,7 @@ body {
 
 /* HEADER */
 header {
-  background: var(--surface);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -43,7 +49,7 @@ header {
 
 .gradient-bar {
   height: 4px;
-  background: linear-gradient(90deg, var(--umum), var(--kurikulum), var(--kokurikulum), var(--hem));
+  background: linear-gradient(90deg, var(--navy), var(--blue), var(--gold-bright));
 }
 
 .header-row {
@@ -66,12 +72,30 @@ header {
   height: 46px;
   object-fit: contain;
   flex-shrink: 0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.brand-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 .brand-text h1 {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 800;
-  color: var(--ink);
+  color: #fff;
   font-size: 1.25rem;
   line-height: 1.2;
   margin: 0;
@@ -82,16 +106,18 @@ header {
 }
 
 .brand-text p {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 500;
-  margin: 2px 0 0;
+  color: var(--gold-bright);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 3px 0 0;
 }
 
 /* NAV TABS */
 nav {
   overflow-x: auto;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
 }
 
 .tabs {
@@ -100,25 +126,28 @@ nav {
 }
 
 .tab {
-  border: none;
-  background: #F1F3F7;
-  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #DCE6FA;
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
   padding: 9px 18px;
-  border-radius: 999px;
+  border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.15s, color 0.15s;
 }
 
 .tab:hover {
-  background: #E6E9EF;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .tab.active {
-  color: #fff;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  border-color: transparent;
+  color: var(--navy);
 }
 
 /* MAIN CONTENT */
@@ -133,7 +162,7 @@ main {
 .cat-label {
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
@@ -144,6 +173,7 @@ main {
   font-size: 2rem;
   letter-spacing: -0.02em;
   margin: 0 0 10px;
+  color: var(--navy);
 }
 
 .cat-desc {
@@ -164,15 +194,27 @@ main {
 }
 
 .card {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 22px 22px 20px;
+  border-radius: 14px;
+  padding: 24px 22px 20px;
+  overflow: hidden;
   transition: box-shadow 0.15s, transform 0.15s;
 }
 
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--blue), var(--gold-bright));
+}
+
 .card:hover {
-  box-shadow: 0 8px 24px rgba(20, 23, 31, 0.06);
+  box-shadow: 0 10px 26px rgba(30, 58, 138, 0.1);
   transform: translateY(-2px);
 }
 
@@ -181,7 +223,7 @@ main {
   font-size: 0.72rem;
   font-weight: 700;
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: 6px;
   margin-bottom: 10px;
 }
 
@@ -191,6 +233,7 @@ main {
   font-size: 1.08rem;
   margin: 0 0 8px;
   letter-spacing: -0.01em;
+  color: var(--navy);
 }
 
 .card p {
@@ -203,9 +246,10 @@ main {
 
 .empty-state {
   border: 1.5px dashed;
-  border-radius: 18px;
+  border-radius: 14px;
   padding: 48px 20px;
   text-align: center;
+  background: var(--surface);
 }
 
 .empty-state .icon-circle {
@@ -226,9 +270,8 @@ main {
 
 /* FOOTER */
 footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  color: var(--muted);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: #C9D6EF;
   margin-top: 20px;
 }
 
@@ -254,7 +297,7 @@ footer {
 }
 
 .footer-item svg {
-  color: var(--umum);
+  color: var(--gold-bright);
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -266,7 +309,7 @@ footer {
 .footer-item a:hover { text-decoration: underline; }
 
 .footer-bottom {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   text-align: center;
   font-size: 0.76rem;
   padding: 14px 0;
