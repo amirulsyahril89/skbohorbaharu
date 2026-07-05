@@ -136,46 +136,10 @@ function buildProfileBlock() {
 
     <div class="section-block">
       <h3 class="section-title">Enrolmen Murid</h3>
-      ${buildEnrolChart(p.enrolment)}
       ${buildEnrolTable(p.enrolment)}
     </div>
   `;
   return wrap;
-}
-
-function buildEnrolChart(enrolment) {
-  const maxVal = Math.max(...enrolment.map((r) => Math.max(r.lelaki, r.perempuan)), 1);
-  const rows = enrolment
-    .map((r) => {
-      const lPct = Math.round((r.lelaki / maxVal) * 100);
-      const pPct = Math.round((r.perempuan / maxVal) * 100);
-      return `
-      <div class="enrol-chart-row">
-        <div class="enrol-chart-label">${escapeHtml(r.tahap)}</div>
-        <div class="enrol-chart-bars">
-          <div class="enrol-bar-group">
-            <div class="enrol-bar-track"><div class="enrol-bar-fill lelaki" style="width:${lPct}%"></div></div>
-            <span class="enrol-bar-value">${r.lelaki}</span>
-          </div>
-          <div class="enrol-bar-group">
-            <div class="enrol-bar-track"><div class="enrol-bar-fill perempuan" style="width:${pPct}%"></div></div>
-            <span class="enrol-bar-value">${r.perempuan}</span>
-          </div>
-        </div>
-        <div class="enrol-chart-total">${r.lelaki + r.perempuan}</div>
-      </div>`;
-    })
-    .join("");
-
-  return `
-    <div class="enrol-chart">
-      <div class="enrol-chart-legend">
-        <span class="legend-item"><span class="legend-dot lelaki"></span>Lelaki</span>
-        <span class="legend-item"><span class="legend-dot perempuan"></span>Perempuan</span>
-      </div>
-      ${rows}
-    </div>
-  `;
 }
 
 function buildEnrolTable(enrolment) {
