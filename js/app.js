@@ -76,9 +76,117 @@ function renderHeader() {
   });
 }
 
+function buildProfileBlock() {
+  const p = SCHOOL_PROFILE;
+  const wrap = document.createElement("div");
+
+  wrap.innerHTML = `
+    <div class="section-block">
+      <p class="intro-text">${escapeHtml(p.intro).replace(/\n/g, "<br>")}</p>
+      ${SCHOOL_INFO.tagline ? `<div class="tagline-banner">"${escapeHtml(SCHOOL_INFO.tagline)}"</div>` : ""}
+    </div>
+
+    <div class="section-block">
+      <h3 class="section-title">Maklumat Sekolah</h3>
+      <table class="info-table"><tbody>
+        ${p.stats.map(([k, v]) => `<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(v)}</td></tr>`).join("")}
+      </tbody></table>
+    </div>
+
+    <div class="section-block">
+      <h3 class="section-title">Sejarah Ringkas</h3>
+      <div class="timeline">
+        ${p.history
+          .map(
+            (h) => `
+          <div class="timeline-item">
+            <div class="timeline-year">${escapeHtml(h.year)}</div>
+            <div class="timeline-event">${escapeHtml(h.event)}</div>
+          </div>`
+          )
+          .join("")}
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h3 class="section-title">Barisan Pentadbiran</h3>
+      <div class="staff-grid">
+        ${p.staff
+          .map((s) => {
+            const initials = s.name
+              .replace(/^(En|Pn|Dr|Tuan|Puan)\s+/i, "")
+              .split(" ")
+              .map((w) => w[0])
+              .slice(0, 2)
+              .join("")
+              .toUpperCase();
+            return `
+          <div class="staff-card">
+            <div class="staff-avatar">${initials}</div>
+            <div class="staff-role">${escapeHtml(s.role)}</div>
+            <div class="staff-name">${escapeHtml(s.name)}</div>
+          </div>`;
+          })
+          .join("")}
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h3 class="section-title">Enrolmen Murid</h3>
+      <table class="enrol-table">
+        <thead><tr><th>Tahap</th><th>Bilangan</th></tr></thead>
+        <tbody>
+          ${p.enrolment.map(([tahap, jumlah]) => `<tr><td>${escapeHtml(tahap)}</td><td>${escapeHtml(jumlah)}</td></tr>`).join("")}
+          <tr class="total"><td>Jumlah</td><td>${escapeHtml(p.enrolmentTotal)}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+  return wrap;
+}
+
+function buildAchievementsBlock() {
+  const wrap = document.createElement("div");
+  wrap.className = "section-block";
+  wrap.innerHTML = `
+    <h3 class="section-title">Pencapaian Sekolah</h3>
+    <div class="achv-list">
+      ${ACHIEVEMENTS.map(
+        (a) => `
+        <div class="achv-item">
+          <div class="achv-item-title">${escapeHtml(a.title)}</div>
+          <span class="achv-badge">${escapeHtml(a.result)}</span>
+        </div>`
+      ).join("")}
+    </div>
+  `;
+  return wrap;
+}
+
+function buildRecognitionBlock() {
+  const wrap = document.createElement("div");
+  wrap.className = "section-block";
+  wrap.innerHTML = `
+    <h3 class="section-title">Pengiktirafan Guru</h3>
+    <div class="rec-list">
+      ${RECOGNITION.map(
+        (r) => `
+        <div class="rec-item">
+          <div>
+            <div class="rec-item-title">${escapeHtml(r.title)}</div>
+            <div class="rec-item-org">${escapeHtml(r.org)}</div>
+          </div>
+        </div>`
+      ).join("")}
+    </div>
+  `;
+  return wrap;
+}
+
 function renderContent() {
   const cat = CATEGORIES.find((c) => c.key === activeTab);
   const posts = (POSTS[activeTab] || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+  const hasProfileContent = ["umum", "kokurikulum", "kurikulum"].includes(activeTab);
 
   const el = document.getElementById("content-inner");
   el.innerHTML = "";
@@ -98,6 +206,17 @@ function renderContent() {
   desc.className = "cat-desc";
   desc.textContent = cat.desc;
   el.appendChild(desc);
+
+  if (activeTab === "umum") el.appendChild(buildProfileBlock());
+  if (activeTab === "kokurikulum") el.appendChild(buildAchievementsBlock());
+  if (activeTab === "kurikulum") el.appendChild(buildRecognitionBlock());
+
+  if (hasProfileContent) {
+    const postsTitle = document.createElement("h3");
+    postsTitle.className = "section-title";
+    postsTitle.textContent = "Pengumuman Terkini";
+    el.appendChild(postsTitle);
+  }
 
   if (posts.length === 0) {
     const empty = document.createElement("div");

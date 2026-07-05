@@ -314,3 +314,232 @@ footer {
   font-size: 0.76rem;
   padding: 14px 0;
 }
+
+/* PROFILE SECTIONS (Umum / Kokurikulum / Kurikulum) */
+.section-block {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title::before {
+  content: "";
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--blue), var(--gold-bright));
+}
+
+.intro-text {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #3E4451;
+  white-space: pre-wrap;
+  max-width: 680px;
+}
+
+.tagline-banner {
+  display: inline-block;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+  background: linear-gradient(135deg, var(--gold-bright), #FFE9A8);
+  padding: 8px 20px;
+  border-radius: 999px;
+  margin: 14px 0 0;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.info-table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--border);
+}
+
+.info-table td {
+  padding: 10px 16px;
+}
+
+.info-table td:first-child {
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--umum-tint);
+  width: 42%;
+}
+
+.timeline {
+  border-left: 2px solid var(--blue);
+  margin-left: 6px;
+  padding-left: 22px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  border: 2px solid var(--navy);
+}
+
+.timeline-year {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.timeline-event {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .staff-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.staff-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 12px;
+  text-align: center;
+}
+
+.staff-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0 auto 10px;
+}
+
+.staff-role {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.staff-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.enrol-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.88rem;
+}
+
+.enrol-table th {
+  background: var(--navy);
+  color: #fff;
+  text-align: left;
+  padding: 10px 16px;
+  font-weight: 600;
+}
+
+.enrol-table td {
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.enrol-table tr.total td {
+  font-weight: 700;
+  color: var(--navy);
+  border-top: 2px solid var(--gold-bright);
+  border-bottom: none;
+}
+
+.achv-list, .rec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achv-item, .rec-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.achv-item-title, .rec-item-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.rec-item-org {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.achv-badge {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color: var(--navy);
+}

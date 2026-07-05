@@ -1,21 +1,96 @@
 // ============================================================
 // FAIL KANDUNGAN LAMAN WEB SEKOLAH
 // ============================================================
-// Untuk kemaskini kandungan: edit sahaja objek SCHOOL_INFO dan
-// senarai POSTS di bawah, simpan, kemudian git add / commit / push.
-// Tiada pangkalan data, tiada login admin — semua kandungan
-// datang terus dari fail ini.
+// Untuk kemaskini kandungan: edit objek-objek di bawah, simpan,
+// kemudian git add / commit / push. Tiada pangkalan data, tiada
+// login admin — semua kandungan datang terus dari fail ini.
 // ============================================================
 
 const SCHOOL_INFO = {
   name: "SEKOLAH KEBANGSAAN BOHOR BAHARU",
+  tagline: "Bobarian Gemilang",
   motto: "Ilmu Pancaran Hidup",
-  address: "Kg Bohor Baru, 28200 Bandar Bera",
+  address: "Sekolah Kebangsaan Bohor Baharu, Kg Bohor Baru, 28200 Bandar Bera",
   phone: "",
   email: "cbaa123@moe.edu.my",
   facebook: "facebook.com/skbbcbaa123",
   code: "CBAA123",
 };
+
+// Dipaparkan di bahagian atas tab "Umum" — profil, sejarah dan statistik sekolah.
+const SCHOOL_PROFILE = {
+  intro:
+    "Sekolah Kebangsaan Bohor Baharu merupakan sebuah sekolah luar bandar yang terletak di Bandar Bera, Pahang. Sekolah ini telah dibuka secara rasmi pada 9 September 1974 bagi memenuhi keperluan pendidikan masyarakat setempat selepas pembukaan penempatan baharu Kampung Bohor Baru akibat banjir besar yang melanda kawasan sekitar Sungai Pahang pada tahun 1971.\n\nSehingga kini, sekolah terus komited melahirkan murid yang cemerlang dalam akademik, sahsiah, kokurikulum dan teknologi selaras dengan aspirasi pendidikan negara.",
+
+  history: [
+    { year: "1971", event: "Banjir besar melanda kawasan sekitar Sungai Pahang." },
+    { year: "1974", event: "Sekolah Kebangsaan Bohor Baharu dibuka secara rasmi pada 9 September 1974." },
+  ],
+
+  stats: [
+    ["Kod Sekolah", "CBAA123"],
+    ["Lokasi", "Luar Bandar"],
+    ["Daerah", "Bera"],
+    ["PPD", "PPD Bera"],
+    ["Gred", "C"],
+    ["Keluasan Tanah", "7.23 Ekar"],
+    ["Sesi", "1 Sesi (Pagi sahaja)"],
+    ["Bil. Guru", "14 orang"],
+    ["Bil. Staf Sokongan", "3 orang"],
+  ],
+
+  staff: [
+    { role: "Guru Besar", name: "En Mohd Fairul Bin A Bakar" },
+    { role: "GPK Pentadbiran", name: "En Azlan Bin Mohamad" },
+    { role: "GPK Hal Ehwal Murid", name: "Pn Nurul Izzah Binti Yahya" },
+    { role: "GPK Kokurikulum", name: "En Azmi Bin Hashim" },
+  ],
+
+  enrolment: [
+    ["Tahun 1", "10 orang (4 lelaki + 6 perempuan)"],
+    ["Tahun 2", "7 orang (4 lelaki + 3 perempuan)"],
+    ["Tahun 3", "10 orang (4 lelaki + 6 perempuan)"],
+    ["Tahun 4", "5 orang (1 lelaki + 4 perempuan)"],
+    ["Tahun 5", "15 orang (9 lelaki + 6 perempuan)"],
+    ["Tahun 6", "10 orang (5 lelaki + 5 perempuan)"],
+    ["Prasekolah", "8 orang (4 lelaki + 4 perempuan)"],
+  ],
+  enrolmentTotal: "65 orang (57 Perdana + 8 Prasekolah)",
+};
+
+// Dipaparkan di bahagian atas tab "Kokurikulum" — pencapaian & kejayaan.
+const ACHIEVEMENTS = [
+  {
+    title: "Karnival STEM Generasi Madani Pahang Tahun 2025 (Cabaran Roket Air)",
+    result: "Keempat Peringkat Negeri",
+  },
+  {
+    title: "Karnival STEM Generasi Madani Bera Tahun 2025 (Cabaran Roket Air)",
+    result: "Johan Peringkat Daerah",
+  },
+  {
+    title: "Tarian Solo Etnik Pertandingan Tarian Sekolah-sekolah Malaysia (TA'SEEM) Peringkat Daerah Bera Tahun 2025",
+    result: "Naib Johan Peringkat Daerah",
+  },
+  {
+    title: "Kejohanan Olahraga MSSD Bera Tahun 2025 (4x200M Lelaki)",
+    result: "Naib Johan Peringkat Daerah",
+  },
+  {
+    title: "Kejohanan Catur Pejabat Tanah Daerah Bera Tahun 2025",
+    result: "Naib Johan",
+  },
+  {
+    title: "Pertandingan Kawad Kaki TKRS Peringkat Daerah Bera",
+    result: "Ketiga Peringkat Daerah",
+  },
+];
+
+// Dipaparkan di bahagian atas tab "Kurikulum" — pengiktirafan guru.
+const RECOGNITION = [
+  { title: "Guru Peneraju Generasi Digital (GPGD)", org: "Kementerian Pendidikan Malaysia" },
+  { title: "Jurulatih Catur Negeri Pahang", org: "MSSM" },
+];
 
 // Tambah pengumuman baharu dengan menyalin format objek di bawah.
 // "date" guna format "YYYY-MM-DD". Pengumuman terbaharu automatik
