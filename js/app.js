@@ -120,9 +120,12 @@ function buildProfileBlock() {
               .slice(0, 2)
               .join("")
               .toUpperCase();
+            const avatar = s.photo
+              ? `<img class="staff-avatar" src="${s.photo}" alt="${escapeHtml(s.name)}" onerror="this.outerHTML='<div class=&quot;staff-avatar&quot;>${initials}</div>'" />`
+              : `<div class="staff-avatar">${initials}</div>`;
             return `
           <div class="staff-card">
-            <div class="staff-avatar">${initials}</div>
+            ${avatar}
             <div class="staff-role">${escapeHtml(s.role)}</div>
             <div class="staff-name">${escapeHtml(s.name)}</div>
           </div>`;

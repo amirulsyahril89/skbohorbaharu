@@ -40,10 +40,10 @@ const SCHOOL_PROFILE = {
   ],
 
   staff: [
-    { role: "Guru Besar", name: "En Mohd Fairul Bin A Bakar" },
-    { role: "GPK Pentadbiran", name: "En Azlan Bin Mohamad" },
-    { role: "GPK Hal Ehwal Murid", name: "Pn Nurul Izzah Binti Yahya" },
-    { role: "GPK Kokurikulum", name: "En Azmi Bin Hashim" },
+    { role: "Guru Besar", name: "En Mohd Fairul Bin A Bakar", photo: "assets/staff/staff-guru-besar.jpg" },
+    { role: "GPK Pentadbiran", name: "En Azlan Bin Mohamad", photo: "assets/staff/staff-gpk-pentadbiran.jpg" },
+    { role: "GPK Hal Ehwal Murid", name: "Pn Nurul Izzah Binti Yahya", photo: "assets/staff/staff-gpk-hem.jpg" },
+    { role: "GPK Kokurikulum", name: "En Azmi Bin Hashim", photo: "assets/staff/staff-gpk-kokurikulum.jpg" },
   ],
 
   enrolment: [
