@@ -483,6 +483,7 @@ footer {
   border-radius: 12px;
   overflow: hidden;
   font-size: 0.88rem;
+  margin-top: 22px;
 }
 
 .enrol-table th {
@@ -491,6 +492,11 @@ footer {
   text-align: left;
   padding: 10px 16px;
   font-weight: 600;
+}
+
+.enrol-table th:not(:first-child),
+.enrol-table td:not(:first-child) {
+  text-align: center;
 }
 
 .enrol-table td {
@@ -503,6 +509,112 @@ footer {
   color: var(--navy);
   border-top: 2px solid var(--gold-bright);
   border-bottom: none;
+  background: var(--umum-tint);
+}
+
+.enrol-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 10px 2px 0;
+}
+
+/* ENROLMENT BAR CHART */
+.enrol-chart {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 20px 8px;
+}
+
+.enrol-chart-legend {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.lelaki { background: var(--blue); }
+.legend-dot.perempuan { background: var(--gold-bright); }
+
+.enrol-chart-row {
+  display: grid;
+  grid-template-columns: 74px 1fr 34px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.enrol-chart-row:not(:last-child) {
+  border-bottom: 1px dashed var(--border);
+}
+
+.enrol-chart-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.enrol-chart-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.enrol-bar-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.enrol-bar-track {
+  flex: 1;
+  height: 8px;
+  background: var(--bg);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.enrol-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  min-width: 3px;
+  transition: width 0.3s ease;
+}
+
+.enrol-bar-fill.lelaki { background: var(--blue); }
+.enrol-bar-fill.perempuan { background: var(--gold-bright); }
+
+.enrol-bar-value {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  width: 18px;
+  text-align: right;
+}
+
+.enrol-chart-total {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--navy);
+  text-align: right;
 }
 
 .achv-list, .rec-list {

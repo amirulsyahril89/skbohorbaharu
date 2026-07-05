@@ -47,15 +47,14 @@ const SCHOOL_PROFILE = {
   ],
 
   enrolment: [
-    ["Tahun 1", "10 orang (4 lelaki + 6 perempuan)"],
-    ["Tahun 2", "7 orang (4 lelaki + 3 perempuan)"],
-    ["Tahun 3", "10 orang (4 lelaki + 6 perempuan)"],
-    ["Tahun 4", "5 orang (1 lelaki + 4 perempuan)"],
-    ["Tahun 5", "15 orang (9 lelaki + 6 perempuan)"],
-    ["Tahun 6", "10 orang (5 lelaki + 5 perempuan)"],
-    ["Prasekolah", "8 orang (4 lelaki + 4 perempuan)"],
+    { tahap: "Tahun 1", lelaki: 4, perempuan: 6 },
+    { tahap: "Tahun 2", lelaki: 4, perempuan: 3 },
+    { tahap: "Tahun 3", lelaki: 4, perempuan: 6 },
+    { tahap: "Tahun 4", lelaki: 1, perempuan: 4 },
+    { tahap: "Tahun 5", lelaki: 9, perempuan: 6 },
+    { tahap: "Tahun 6", lelaki: 5, perempuan: 5 },
+    { tahap: "Prasekolah", lelaki: 4, perempuan: 4 },
   ],
-  enrolmentTotal: "65 orang (57 Perdana + 8 Prasekolah)",
 };
 
 // Dipaparkan di bahagian atas tab "Kokurikulum" — pencapaian & kejayaan.
