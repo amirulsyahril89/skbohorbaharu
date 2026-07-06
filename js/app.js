@@ -88,9 +88,11 @@ function buildProfileBlock() {
 
     <div class="section-block">
       <h3 class="section-title">Maklumat Sekolah</h3>
-      <table class="info-table"><tbody>
-        ${p.stats.map(([k, v]) => `<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(v)}</td></tr>`).join("")}
-      </tbody></table>
+      <div class="table-scroll">
+        <table class="info-table"><tbody>
+          ${p.stats.map(([k, v]) => `<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(v)}</td></tr>`).join("")}
+        </tbody></table>
+      </div>
     </div>
 
     <div class="section-block">
@@ -166,20 +168,22 @@ function buildEnrolTable(enrolment) {
     .join("");
 
   return `
-    <table class="enrol-table">
-      <thead>
-        <tr><th>Tahap</th><th>Lelaki</th><th>Perempuan</th><th>Jumlah</th></tr>
-      </thead>
-      <tbody>
-        ${rows}
-        <tr class="total">
-          <td>Jumlah Keseluruhan</td>
-          <td>${totalL}</td>
-          <td>${totalP}</td>
-          <td>${totalL + totalP}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-scroll">
+      <table class="enrol-table">
+        <thead>
+          <tr><th>Tahap</th><th>Lelaki</th><th>Perempuan</th><th>Jumlah</th></tr>
+        </thead>
+        <tbody>
+          ${rows}
+          <tr class="total">
+            <td>Jumlah Keseluruhan</td>
+            <td>${totalL}</td>
+            <td>${totalP}</td>
+            <td>${totalL + totalP}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <p class="enrol-note">${totalPerdana} orang Perdana (Tahun 1–6) + ${totalPra} orang Prasekolah</p>
   `;
 }

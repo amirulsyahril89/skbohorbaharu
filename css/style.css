@@ -360,8 +360,16 @@ footer {
   margin: 14px 0 0;
 }
 
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+
 .info-table {
   width: 100%;
+  min-width: 340px;
   border-collapse: collapse;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -477,6 +485,7 @@ footer {
 
 .enrol-table {
   width: 100%;
+  min-width: 460px;
   border-collapse: collapse;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -557,4 +566,129 @@ footer {
   border-radius: 999px;
   background: linear-gradient(135deg, var(--gold-bright), var(--gold));
   color: var(--navy);
+}
+
+/* ============================================================
+   PARAPAN TELEFON (MOBILE)
+   ============================================================ */
+@media (max-width: 640px) {
+  .wrap {
+    padding: 0 16px;
+  }
+
+  .header-row {
+    padding: 16px 0 14px;
+    gap: 12px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand img,
+  .brand-badge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-text h1 {
+    font-size: 1.02rem;
+  }
+
+  .brand-text p {
+    font-size: 0.68rem;
+  }
+
+  nav {
+    padding-bottom: 12px;
+  }
+
+  .tab {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .content-inner {
+    padding: 28px 0 44px;
+  }
+
+  .cat-title {
+    font-size: 1.5rem;
+  }
+
+  .cat-desc {
+    font-size: 0.9rem;
+    margin-bottom: 26px;
+  }
+
+  .card {
+    padding: 20px 16px 16px;
+  }
+
+  .section-block {
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    font-size: 1.02rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .tagline-banner {
+    font-size: 0.92rem;
+    padding: 7px 16px;
+  }
+
+  .staff-grid {
+    gap: 12px;
+  }
+
+  .staff-card {
+    padding: 14px 8px;
+  }
+
+  .staff-avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .staff-name {
+    font-size: 0.8rem;
+  }
+
+  .achv-item,
+  .rec-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .achv-badge {
+    align-self: flex-start;
+  }
+
+  .footer-grid {
+    padding: 28px 0;
+    gap: 16px;
+  }
+
+  .footer-item {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-text h1 {
+    font-size: 0.92rem;
+  }
+
+  .cat-title {
+    font-size: 1.3rem;
+  }
+
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
